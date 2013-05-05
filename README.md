@@ -9,16 +9,10 @@ Build your own Dwarf Fortress installation from source with no nonsense. All the
 * [splinterz's Dwarf Therapist](https://code.google.com/r/splintermind-attributes/) fork
 * [Soundsense](http://df.zweistein.cz/soundsense/)
 
-To be added someday:
-
-* Graphics sets bundles 
-* Quick fort
-* ??
-
 **Supported Distros**:
 
 * Fedora
-* Ubuntu (started, but not tested, please submit a bug report)
+* Ubuntu (started, but not tested, please test and submit an issue)
 
 Help me add more! See Contributing section below.
 
@@ -29,12 +23,20 @@ Help me add more! See Contributing section below.
 
 ## Quickstart
 
+*From nothing to a full blown install with (almost) all the fixins*.
+
 ```bash
     $ git clone https://github.com/Ramblurr/df-bootstrap
     $ cd df-bootstrap
     $ ./src/prepare-YOUR_DISTRO.sh
     $ make
-    $ ./df
+```
+
+Run your newly created DF install:
+```bash
+    $ ./DwarfTherapist
+    $ ./SoundSense
+    $ ./DwarfFortress
 ```
 
 ## Advanced
@@ -49,6 +51,15 @@ To add a distro:
 2. Edit `Makefile`'s install-df section to do any post-install commands
 3. Test! `make nuke-everything && ./src/prepare-DISTRO.sh && make`
 4. Commit and send a pull request
+
+
+## Future Plans
+
+To be added someday:
+
+* Graphics sets bundles 
+* Quick fort
+* ??
 
 # Issues
 
