@@ -1,27 +1,39 @@
-# Versions of apps to be installed
-DF_VERSION = 0.34.11
-DFHACK_VERSION = 0.34.11-r3
+#
+## Versions of apps to be installed
+#
+#
+DF_VERSION         = 0.34.11
+DFHACK_VERSION     = 0.34.11-r3
 SOUNDSENSE_VERSION = 41_181
-# dwarftherapist is always built from source
+
+# (dwarftherapist is always built from latest source)
 
 ###########################################################
 .SILENT:
 
+
+#
+## qmake location
+### detect qmake across distros
+#
+
+# most distros call it qmake, but a few call it qmake-qt4
 QMAKE := $(shell which qmake 2> /dev/null)
 ifeq ($(QMAKE),)
 QMAKE := $(shell which qmake-qt4 2> /dev/null )
 endif
 
 ifeq ($(QMAKE),)
-$(error qmake not found. Did you install the dependencies?)
+$(error qmake not found. Did you install the dependencies? See README.md)
 endif
 
 DISTRO = $(shell cat src/distro)
 
 all: install-dfhack install-ss install-dt
 
-install-deps:
-	./src/install-deps.sh
+#
+## dfhack
+#
 
 src/dfhack/.dirstamp:
 	git submodule update --init --recursive && \
@@ -46,6 +58,10 @@ distclean-dfhack:
 	-rm -rf src/dfhack/
 	git checkout src/dfhack
 
+#
+## Dwarf Therapist
+#
+
 src/dwarftherapist:
 	hg clone https://code.google.com/r/splintermind-attributes/ src/dwarftherapist
 
@@ -67,6 +83,10 @@ clean-dt:
 distclean-dt:
 	-rm -rf src/dwarftherapist
 
+#
+## Soundsense
+#
+
 src/soundsense:
 	wget https://df-soundsense.googlecode.com/files/soundSense_$(SOUNDSENSE_VERSION).zip -O src/soundSense_$(SOUNDSENSE_VERSION).zip && \
 	cd src && unzip soundSense_$(SOUNDSENSE_VERSION).zip
@@ -82,6 +102,10 @@ clean-ss:
 distclean-ss:
 	-rm src/soundSense_*.zip
 	-rm -rf src/soundsense/
+
+#
+## Dwarf Fortress
+#
 
 df_linux:
 	cd src/ && \
@@ -112,6 +136,8 @@ clean-df:
 distclean-df:
 	-rm src/df_*_linux.tar.bz2
 	-rm -rf df_linux
+
+# global
 
 clean: clean-df clean-ss clean-dfhack clean-dt
 
