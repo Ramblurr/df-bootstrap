@@ -18,38 +18,40 @@ To be added someday:
 
     * Fedora
 
+Help me add more! See Contributing section below.
+
+# Usage 
+
 ## Quickstart
 
 ```bash
     $ git clone https://github.com/Ramblurr/df-bootstrap
     $ cd df-bootstrap
+    $ ./src/prepare-YOUR_DISTRO.sh
     $ make
     $ ./df
 ```
-
-## Dependencies
-
-TODO: write this
-git
-svn
-hg
 
 ## Advanced
 
 At the top of the `Makefile` you can customize the versions to install.
 
-## Why?
+# Contributing
 
-Dwarf fortress packaging is a PITA. Most distros don't allow non-free binary
-blobs in their packages, so getting DF included is not really possible. Even
-then the multitude of other utilities can be a PITA to run as well.
+To add a distro:
 
-## Issues
+1. Create a `src/prepare-DISTRO.sh` that installs all the necessary packages.
+2. Edit `Makefile`'s install-df section to do any post-install commands
+3. Test! `make nuke-everything && ./src/prepare-DISTRO.sh && make`
+4. Commit and send a pull request
 
-* splinterz isn't using tags in his repo, so there's no way to fetch the latest
+# Issues
+
+* splinterz isn't using tags in his DT repo, so there's no way to fetch the latest
 release, as opposed to the most recent source code update.
+* soundsense's latest version also cannot be easily determined
 
-## Credits
+# Credits
 
 * Dr. KillPatient - df_autoget script
 

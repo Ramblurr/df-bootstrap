@@ -1,8 +1,10 @@
+# Versions of apps to be installed
 DF_VERSION = 0.34.11
 DFHACK_VERSION = 0.34.11-r3
 SOUNDSENSE_VERSION = 41_181
 # dwarftherapist is always built from source
 
+###########################################################
 .SILENT:
 
 QMAKE := $(shell which qmake 2> /dev/null)
@@ -14,7 +16,12 @@ ifeq ($(QMAKE),)
 $(error qmake not found. Did you install the dependencies?)
 endif
 
+DISTRO = $(shell cat src/distro)
+
 all: install-dfhack install-ss install-dt
+
+install-deps:
+	./src/install-deps.sh
 
 src/dfhack/.dirstamp:
 	git submodule update --init --recursive && \
@@ -36,10 +43,11 @@ clean-dfhack:
 	cd src/dfhack/ && rm -rf build && git checkout build
 
 distclean-dfhack:
-	-rm -rf src/dfhack/*
+	-rm -rf src/dfhack/
+	git checkout src/dfhack
 
 src/dwarftherapist:
-	hg clone https://code.google.com/r/splintermind-attributes/ src/dwarftherapist && \
+	hg clone https://code.google.com/r/splintermind-attributes/ src/dwarftherapist
 
 src/dwarftherapist/.dirstamp: src/dwarftherapist
 	touch src/dwarftherapist/.dirstamp
@@ -80,8 +88,24 @@ df_linux:
 	./df_autoget.sh -v $(DF_VERSION) -d ../
 
 fetch-df: df_linux
+
 install-df: fetch-df
 	touch df_linux/gamelog.txt
+
+# Fedora specific post-install
+ifeq ($(DISTRO), fedora)
+		echo "Post-install for Fedora"
+		# Use system libstdc
+		-mv df_linux/libs/libstdc++.so.6 df_linux/libs/libstdc++.so.6.orig
+		# symlink libopenal in place so DF can find it
+		-ln -s /usr/lib/libopenal.so.1 df_linux/libs/libopenal.so
+endif
+
+# Ubuntu specific post-install
+ifeq ($(DISTRO), ubuntu)
+		echo "Post-install for Ubuntu"
+		# TODO
+endif
 
 clean-df:
 
