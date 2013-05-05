@@ -1,0 +1,9 @@
+#!/bin/sh
+
+DT="src/dwarftherapist"
+if [[ ! -x $DT/bin/release/DwarfTherapist ]]; then
+    echo "DwarfTherapist is not built. See README.md"
+    exit 1
+fi
+
+cd $DT && ./bin/release/DwarfTherapist &> /dev/null &
