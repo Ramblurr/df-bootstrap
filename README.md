@@ -17,6 +17,7 @@ To be added someday:
 **Supported Distros**:
 
     * Fedora
+    * Ubuntu (started, but not tested, please submit a bug report)
 
 Help me add more! See Contributing section below.
 
