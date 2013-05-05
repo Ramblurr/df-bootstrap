@@ -1,25 +1,29 @@
-# Dwarf Fortress Bootstrap
+# Dwarf Fortress Bootstrap (beta)
 
-Build your own Dwarf Fortress installation for Linux with no nonsense.
+Build your own Dwarf Fortress installation from source with no nonsense. All the shit you need. It Just Works†
 
-Installs:
+**Installs:**
 
-    * Dwarf Fortress - latest version
-    * dfhack - latest version
-    * Dwarf Therapist - splinterz's fork
-    * Soundsense - latest version
+* [Dwarf Fortress](http://www.bay12games.com/dwarves/)
+* [dfhack](https://github.com/peterix/dfhack)
+* [splinterz's Dwarf Therapist](https://code.google.com/r/splintermind-attributes/) fork
+* [Soundsense](http://df.zweistein.cz/soundsense/)
 
 To be added someday:
 
-    * Quick fort
-    * ??
+* Graphics sets bundles 
+* Quick fort
+* ??
 
 **Supported Distros**:
 
-    * Fedora
-    * Ubuntu (started, but not tested, please submit a bug report)
+* Fedora
+* Ubuntu (started, but not tested, please submit a bug report)
 
 Help me add more! See Contributing section below.
+
+    
+#### **†** Might not just work yet, it's still in beta.
 
 # Usage 
 
