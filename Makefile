@@ -28,6 +28,9 @@ $(error qmake not found. Did you install the dependencies? See README.md)
 endif
 
 DISTRO = $(shell cat src/distro)
+ifeq ($(DISTRO),unknown)
+$(error Unknown distro. Did you run src/prepare-YOURDISTRO.sh? See README.md)
+endif
 
 all: install-dfhack install-ss install-dt
 
