@@ -11,8 +11,8 @@ Build your own Dwarf Fortress installation from source with no nonsense. All the
 
 **Supported Distros**:
 
-* Fedora
-* Ubuntu (started, but not tested, please test and submit an issue)
+* Fedora x86_64
+* Ubuntu x86_64 (started, but not tested, please test and submit an issue)
 
 Help me add more! See Contributing section below.
 
