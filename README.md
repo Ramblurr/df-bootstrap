@@ -4,6 +4,8 @@ Build your own Dwarf Fortress installation from source with no nonsense. All the
 
 **Installs:**
 
+* All the dependencies you need to compile and run the tools
+* Fixes specific to your distro
 * [Dwarf Fortress](http://www.bay12games.com/dwarves/)
 * [dfhack](https://github.com/peterix/dfhack)
 * [splinterz's Dwarf Therapist](https://code.google.com/r/splintermind-attributes/) fork
