@@ -1,4 +1,12 @@
-# Dwarf Fortress Bootstrap (beta)
+# Dwarf Fortress Bootstrap
+
+## Deprecated
+
+This project is no longer maintained, and is largely superseded by [andrewd18's
+df-lnp-installer](https://github.com/andrewd18/df-lnp-installer), however it
+remains of historical interest for getting DF running on older distros.
+
+---
 
 Build your own Dwarf Fortress installation from source with no nonsense. All the shit you need. It Just Works†
 
