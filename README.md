@@ -1,10 +1,10 @@
-# Dwarf Fortress Bootstrap
-
 ## Deprecated
 
-This project is no longer maintained, and is largely superseded by [andrewd18's
-df-lnp-installer](https://github.com/andrewd18/df-lnp-installer), however it
+**Warning:** This project is no longer maintained, and is largely superseded by ~~[andrewd18's
+df-lnp-installer](https://github.com/andrewd18/df-lnp-installer)~~ the official [Lazy Newb Pack for Linux](https://github.com/Lazy-Newb-Pack/Lazy-Newb-Pack-Linux), however it
 remains of historical interest for getting DF running on older distros.
+
+# Dwarf Fortress Bootstrap
 
 ---
 
